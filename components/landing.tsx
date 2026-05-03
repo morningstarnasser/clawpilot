@@ -28,9 +28,8 @@ export function LandingPage() {
       <motion.div className="scroll-beam" style={{ scaleX: scrollYProgress }} />
       <section className="hero shell">
         <header className="nav glass">
-          <a className="brand" href="#top" aria-label="PrivateAgent.ch Home">
-            <span className="brand-logo" aria-hidden="true"><img src="/brand/privateagent-logo.png" alt="" /></span>
-            <span>PrivateAgent.ch</span>
+          <a className="brand brand-icon-only" href="#top" aria-label="PrivateAgent.ch Home">
+            <span className="brand-logo nav-logo-large" aria-hidden="true"><img src="/brand/privateagent-logo.png" alt="" /></span>
           </a>
           <nav className="desktop-nav" aria-label="Hauptnavigation">
             {nav.map((item) => (
