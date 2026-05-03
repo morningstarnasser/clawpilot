@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
 import { ArrowRight, Check, ChevronRight, Globe2, LockKeyhole, Play, Server, Sparkles } from 'lucide-react';
-import { advantages, nav, pricing, services, stack, timeline } from '@/lib/data';
+import { advantages, faqs, nav, pricing, services, stack, timeline } from '@/lib/data';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -37,8 +37,8 @@ export function LandingPage() {
         <div className="hero-grid" id="top">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="hero-copy">
             <Badge>Private OpenClaw Agents · Swiss Managed Ops</Badge>
-            <h1>Dein KI-Operator für alles, was im Alltag Zeit frisst.</h1>
-            <p className="lead">PrivateAgent.ch baut und betreibt private OpenClaw-Agenten für Schweizer Unternehmer: Messaging, E-Mail, Kalender, Browser, Reports, Social Media und individuelle Business-Workflows.</p>
+            <h1>Private KI-Agenten für Schweizer Unternehmer und KMU.</h1>
+            <p className="lead">PrivateAgent.ch baut und betreibt private OpenClaw KI-Agenten in der Schweiz: WhatsApp, Telegram, E-Mail, Kalender, Browser Automation, Reports, Social Media und individuelle Business-Workflows auf privater Infrastruktur.</p>
             <div className="hero-actions">
               <a className="button primary" href="#kontakt">Pilotprojekt anfragen <ArrowRight size={18} /></a>
               <a className="button secondary" href="#services"><Play size={17} /> Services ansehen</a>
@@ -78,9 +78,9 @@ export function LandingPage() {
 
       <section className="section shell" id="services">
         <motion.div className="section-head" initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}>
-          <Badge>Was wir anbieten</Badge>
-          <h2>Managed AI-Ops, nicht noch ein Chatbot.</h2>
-          <p>Wir nehmen OpenClaw als Kern und bauen daraus produktive Operatoren, die wirklich Arbeit erledigen — sauber, überwacht und auf deine Prozesse trainiert.</p>
+          <Badge>KI-Agenten Schweiz</Badge>
+          <h2>Managed OpenClaw Automation, nicht noch ein Chatbot.</h2>
+          <p>Wir nehmen OpenClaw als Kern und bauen daraus produktive KI-Operatoren für Schweizer Unternehmen — sauber, überwacht und auf deine Prozesse, Sprache und Freigaben trainiert.</p>
         </motion.div>
         <div className="service-grid">
           {services.map((service, index) => {
@@ -157,6 +157,36 @@ export function LandingPage() {
 
       <section className="section shell advantages">
         {advantages.map((adv) => { const Icon = adv.icon; return <article key={adv.title}><Icon /><h3>{adv.title}</h3><p>{adv.text}</p></article>; })}
+      </section>
+
+      <section className="section shell seo-content" id="faq">
+        <div className="section-head">
+          <Badge>SEO & Klartext</Badge>
+          <h2>Warum PrivateAgent.ch für KI-Automation in der Schweiz?</h2>
+          <p>Viele Firmen testen KI-Tools, aber produktive Automatisierung scheitert oft an Login-Portalen, Datenschutz, Freigaben, Secrets und Wartung. PrivateAgent.ch schliesst genau diese Lücke: ein privater KI-Agent, der deine Prozesse kennt und kontrolliert Aufgaben erledigt.</p>
+        </div>
+        <div className="seo-grid">
+          <article>
+            <h3>Für Schweizer KMU gebaut</h3>
+            <p>Wir optimieren Agenten für lokale Arbeitsrealität: Deutsch/Schweizerdeutsch, Schweizer Anbieter, KMU-Prozesse, Hostpoint/Bluewin/Gmail, Kalender, Rechnungen, Kundenanfragen und wiederkehrende Admin-Arbeit.</p>
+          </article>
+          <article>
+            <h3>Private Infrastruktur statt Blackbox</h3>
+            <p>Der Agent läuft auf privater Infrastruktur mit getrennten Secrets, Logs, Backups und klaren Freigaben. So bleiben produktive Workflows nachvollziehbar und kontrollierbar.</p>
+          </article>
+          <article>
+            <h3>OpenClaw als Operator-Kern</h3>
+            <p>OpenClaw verbindet Messaging, Browser, Dateien, Skills, Memory und Subagents. Daraus entsteht kein Demo-Chatbot, sondern ein Operator, der echte Aufgaben übernimmt.</p>
+          </article>
+        </div>
+        <div className="faq-list">
+          {faqs.map((faq) => (
+            <details key={faq.question}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
       <section className="section shell final-cta" id="kontakt">

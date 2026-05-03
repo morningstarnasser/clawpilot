@@ -1,17 +1,68 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const siteUrl = 'https://privateagent.ch';
+const title = 'PrivateAgent.ch | Private KI-Agenten & OpenClaw Automation Schweiz';
+const description = 'Managed private KI-Agenten für Schweizer KMU: OpenClaw Setup, WhatsApp/Telegram Operator, E-Mail, Kalender, Browser Automation, Reports und sichere Private-VPS-Betreuung.';
+
 export const metadata: Metadata = {
-  title: 'PrivateAgent.ch — Private OpenClaw Agents for Swiss Businesses',
-  description: 'Managed OpenClaw AI agents on private infrastructure: Telegram, WhatsApp, Gmail, Calendar, browser automation, monitoring and business workflows.',
-  metadataBase: new URL('https://privateagent.ch'),
+  title,
+  description,
+  applicationName: 'PrivateAgent.ch',
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'de-CH': '/',
+    },
+  },
+  keywords: [
+    'KI Agent Schweiz',
+    'AI Agent Schweiz',
+    'OpenClaw Agent',
+    'Private KI Agenten',
+    'Business Automation Schweiz',
+    'WhatsApp Automation',
+    'Telegram Agent',
+    'E-Mail Automation KMU',
+    'Browser Automation Schweiz',
+    'AI Operator für KMU',
+  ],
+  authors: [{ name: 'PrivateAgent.ch', url: siteUrl }],
+  creator: 'PrivateAgent.ch',
+  publisher: 'PrivateAgent.ch',
+  category: 'Business automation',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
-    title: 'PrivateAgent.ch — Private OpenClaw Agents',
-    description: 'Your private AI operator for Swiss business workflows.',
-    url: 'https://privateagent.ch',
+    title,
+    description,
+    url: siteUrl,
     siteName: 'PrivateAgent.ch',
     locale: 'de_CH',
     type: 'website',
+    images: [
+      {
+        url: '/icon-512.png',
+        width: 512,
+        height: 512,
+        alt: 'PrivateAgent.ch Logo — private KI-Agenten für Schweizer Unternehmen',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
     images: ['/icon-512.png'],
   },
   icons: {
