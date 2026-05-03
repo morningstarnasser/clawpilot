@@ -207,3 +207,22 @@ h3 { margin: 0; letter-spacing: -0.035em; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-form { grid-template-columns: 1fr; }
 }
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  background: radial-gradient(circle at 30% 20%, rgba(94,228,255,.28), rgba(127,92,255,.10) 44%, rgba(3,7,18,.85));
+  box-shadow: 0 16px 34px rgba(94, 228, 255, .18), inset 0 1px 0 rgba(255,255,255,.12);
+  overflow: hidden;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform: scale(1.14);
+}

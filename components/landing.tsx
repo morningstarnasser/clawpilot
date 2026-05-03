@@ -23,7 +23,7 @@ export function LandingPage() {
       <section className="hero shell">
         <header className="nav glass">
           <a className="brand" href="#top" aria-label="PrivateAgent.ch Home">
-            <span className="brand-mark">PA</span>
+            <span className="brand-logo" aria-hidden="true"><img src="/brand/privateagent-logo.png" alt="" /></span>
             <span>PrivateAgent.ch</span>
           </a>
           <nav>
