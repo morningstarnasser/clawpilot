@@ -23,7 +23,7 @@ export function LandingPage() {
       <section className="hero shell">
         <header className="nav glass">
           <a className="brand" href="#top" aria-label="PrivateAgent.ch Home">
-            <span className="brand-mark">CP</span>
+            <span className="brand-mark">PA</span>
             <span>PrivateAgent.ch</span>
           </a>
           <nav>
@@ -31,7 +31,7 @@ export function LandingPage() {
               <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
             ))}
           </nav>
-          <a className="nav-cta" href="mailto:info@privateagent.ch">Pilot starten <ChevronRight size={16} /></a>
+          <a className="nav-cta" href="#kontakt">Pilot starten <ChevronRight size={16} /></a>
         </header>
 
         <div className="hero-grid" id="top">
@@ -40,7 +40,7 @@ export function LandingPage() {
             <h1>Dein KI-Operator für alles, was im Alltag Zeit frisst.</h1>
             <p className="lead">PrivateAgent.ch baut und betreibt private OpenClaw-Agenten für Schweizer Unternehmer: Messaging, E-Mail, Kalender, Browser, Reports, Social Media und individuelle Business-Workflows.</p>
             <div className="hero-actions">
-              <a className="button primary" href="mailto:info@privateagent.ch?subject=PrivateAgent.ch%20Pilotprojekt">Pilotprojekt anfragen <ArrowRight size={18} /></a>
+              <a className="button primary" href="#kontakt">Pilotprojekt anfragen <ArrowRight size={18} /></a>
               <a className="button secondary" href="#services"><Play size={17} /> Services ansehen</a>
             </div>
             <div className="trust-row">
@@ -149,7 +149,7 @@ export function LandingPage() {
               <p className="price">{plan.price}</p>
               <p className="cadence">{plan.cadence}</p>
               <ul>{plan.points.map((p) => <li key={p}><Check size={16} /> {p}</li>)}</ul>
-              <a href="mailto:info@privateagent.ch" className="button full">Anfragen</a>
+              <a href="#kontakt" className="button full">Anfragen</a>
             </article>
           ))}
         </div>
@@ -159,12 +159,56 @@ export function LandingPage() {
         {advantages.map((adv) => { const Icon = adv.icon; return <article key={adv.title}><Icon /><h3>{adv.title}</h3><p>{adv.text}</p></article>; })}
       </section>
 
-      <section className="section shell final-cta" id="faq">
+      <section className="section shell final-cta" id="kontakt">
         <div className="cta-bg" />
-        <Badge>PrivateAgent.ch ist gekauft</Badge>
-        <h2>Bereit für deinen privaten KI-Operator?</h2>
-        <p>Wir bauen die erste produktive Automation, verbinden deine Kanäle und zeigen in einer Woche, was wirklich Zeit spart.</p>
-        <a className="button primary big" href="mailto:info@privateagent.ch?subject=PrivateAgent.ch%20Start">Pilot starten <ArrowRight /></a>
+        <Badge>PrivateAgent.ch ist bereit</Badge>
+        <div className="contact-grid">
+          <div className="contact-copy">
+            <h2>Bereit für deinen privaten KI-Operator?</h2>
+            <p>Schick kurz, was du automatisieren möchtest. Wir melden uns mit einem konkreten Pilot-Vorschlag für OpenClaw, Messaging, Inbox, Kalender oder Browser-Ops.</p>
+            <div className="contact-mini-list">
+              <span><Check size={16} /> Antwort an info@privateagent.ch</span>
+              <span><Check size={16} /> Kein Newsletter, kein Spam</span>
+              <span><Check size={16} /> Menschliche Freigabe für produktive Aktionen</span>
+            </div>
+          </div>
+          <form className="contact-form" action="/contact.php" method="post">
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hp-field" aria-hidden="true" />
+            <label>
+              Name *
+              <input name="name" type="text" placeholder="Dein Name" required />
+            </label>
+            <label>
+              E-Mail *
+              <input name="email" type="email" placeholder="du@firma.ch" required />
+            </label>
+            <label>
+              Firma
+              <input name="company" type="text" placeholder="Firma / Projekt" />
+            </label>
+            <label>
+              Telefon
+              <input name="phone" type="tel" placeholder="Optional" />
+            </label>
+            <label className="wide">
+              Worum geht es?
+              <select name="service" defaultValue="">
+                <option value="" disabled>Bitte wählen</option>
+                <option>Private OpenClaw Instanz</option>
+                <option>WhatsApp / Telegram Operator</option>
+                <option>Inbox & Kalender Automation</option>
+                <option>Browser / Web-Portal Automation</option>
+                <option>Business Workflow / Daily Reports</option>
+              </select>
+            </label>
+            <label className="wide">
+              Nachricht *
+              <textarea name="message" rows={5} placeholder="Was soll dein Agent übernehmen?" required />
+            </label>
+            <button className="button primary big wide" type="submit">Anfrage senden <ArrowRight /></button>
+            <p className="form-note">Nach dem Absenden wirst du zurück zur Seite geleitet.</p>
+          </form>
+        </div>
       </section>
 
       <footer className="footer shell">

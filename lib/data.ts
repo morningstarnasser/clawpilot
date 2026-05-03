@@ -1,6 +1,6 @@
 import { Bot, CalendarClock, Eye, Globe2, Inbox, LockKeyhole, MessageCircle, ShieldCheck, Sparkles, Workflow, Wrench, Zap } from 'lucide-react';
 
-export const nav = ['Services', 'Ablauf', 'Preise', 'Sicherheit', 'FAQ'];
+export const nav = ['Services', 'Ablauf', 'Preise', 'Sicherheit', 'Kontakt'];
 
 export const services = [
   { icon: MessageCircle, title: 'Telegram & WhatsApp Operator', text: 'Ein Agent, der Anfragen annimmt, Medien versteht, Antworten vorbereitet und Workflows startet.' },
