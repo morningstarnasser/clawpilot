@@ -1,5 +1,7 @@
 # PrivateAgent.ch
 
+[![Deploy to Hostpoint](https://github.com/morningstarnasser/clawpilot/actions/workflows/deploy-hostpoint.yml/badge.svg)](https://github.com/morningstarnasser/clawpilot/actions/workflows/deploy-hostpoint.yml)
+
 Private OpenClaw agents for Swiss business operations.
 
 ## Positioning
@@ -32,7 +34,7 @@ DNS NS lookup on 2026-05-03:
 - `privateagent.ch` — no NS found, likely available
 - `agentforge.ch` — no NS found, likely available
 
-No domain was purchased. Final availability must be confirmed at registrar checkout.
+Domain purchased/connected: `privateagent.ch`. Hosting/deploy target: Hostpoint FTPS via GitHub Actions.
 
 ## Tech
 
@@ -49,3 +51,16 @@ npm install
 npm run dev
 npm run build
 ```
+
+
+## Deploy
+
+Deploy is automated via GitHub Actions on every push to `main`.
+
+Required repository secrets:
+
+- `HOSTPOINT_FTP_SERVER`
+- `HOSTPOINT_FTP_USERNAME`
+- `HOSTPOINT_FTP_PASSWORD`
+
+The workflow builds the static Next.js export and uploads `out/` to Hostpoint via FTPS.
