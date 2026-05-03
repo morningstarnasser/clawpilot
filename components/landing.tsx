@@ -26,30 +26,30 @@ export function LandingPage() {
   return (
     <main>
       <motion.div className="scroll-beam" style={{ scaleX: scrollYProgress }} />
-      <section className="hero shell">
-        <header className="nav glass">
-          <a className="brand brand-icon-only" href="#top" aria-label="PrivateAgent.ch Home">
-            <span className="brand-logo nav-logo-large" aria-hidden="true"><img src="/brand/privateagent-logo.png" alt="" /></span>
-          </a>
-          <nav className="desktop-nav" aria-label="Hauptnavigation">
-            {nav.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
-            ))}
-          </nav>
-          <div className="nav-actions">
-            <a className="nav-cta" href="#kontakt">Pilot starten <ChevronRight size={16} /></a>
-            <details className="mobile-menu">
-              <summary aria-label="Menü öffnen"><Menu size={18} /><span>Menü</span></summary>
-              <div className="mobile-menu-panel">
-                {nav.map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
-                ))}
-                <a className="mobile-menu-cta" href="#kontakt">Pilot starten <ArrowRight size={16} /></a>
-              </div>
-            </details>
-          </div>
-        </header>
+      <header className="nav glass shell">
+        <a className="brand brand-icon-only" href="#top" aria-label="PrivateAgent.ch Home">
+          <span className="brand-logo nav-logo-large" aria-hidden="true"><img src="/brand/privateagent-logo.png" alt="" /></span>
+        </a>
+        <nav className="desktop-nav" aria-label="Hauptnavigation">
+          {nav.map((item) => (
+            <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
+          ))}
+        </nav>
+        <div className="nav-actions">
+          <a className="nav-cta" href="#kontakt">Pilot starten <ChevronRight size={16} /></a>
+          <details className="mobile-menu">
+            <summary aria-label="Menü öffnen"><Menu size={18} /><span>Menü</span></summary>
+            <div className="mobile-menu-panel">
+              {nav.map((item) => (
+                <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
+              ))}
+              <a className="mobile-menu-cta" href="#kontakt">Pilot starten <ArrowRight size={16} /></a>
+            </div>
+          </details>
+        </div>
+      </header>
 
+      <section className="hero shell">
         <div className="hero-grid" id="top">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="hero-copy">
             <Badge>Private OpenClaw Agents · Swiss Managed Ops</Badge>
