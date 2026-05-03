@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, Check, ChevronRight, Globe2, LockKeyhole, Play, Server, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, ChevronRight, Globe2, LockKeyhole, Menu, Play, Server, Sparkles } from 'lucide-react';
 import { advantages, faqs, nav, pricing, services, stack, timeline } from '@/lib/data';
 
 const fadeUp: Variants = {
@@ -32,12 +32,23 @@ export function LandingPage() {
             <span className="brand-logo" aria-hidden="true"><img src="/brand/privateagent-logo.png" alt="" /></span>
             <span>PrivateAgent.ch</span>
           </a>
-          <nav>
+          <nav className="desktop-nav" aria-label="Hauptnavigation">
             {nav.map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
             ))}
           </nav>
-          <a className="nav-cta" href="#kontakt">Pilot starten <ChevronRight size={16} /></a>
+          <div className="nav-actions">
+            <a className="nav-cta" href="#kontakt">Pilot starten <ChevronRight size={16} /></a>
+            <details className="mobile-menu">
+              <summary aria-label="Menü öffnen"><Menu size={18} /><span>Menü</span></summary>
+              <div className="mobile-menu-panel">
+                {nav.map((item) => (
+                  <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
+                ))}
+                <a className="mobile-menu-cta" href="#kontakt">Pilot starten <ArrowRight size={16} /></a>
+              </div>
+            </details>
+          </div>
         </header>
 
         <div className="hero-grid" id="top">
