@@ -1,10 +1,10 @@
-# ClawPilot
+# PrivateAgent.ch
 
 Private OpenClaw agents for Swiss business operations.
 
 ## Positioning
 
-ClawPilot is a premium managed OpenClaw service for entrepreneurs and Swiss SMBs. It offers private AI operators on isolated infrastructure with messaging, email, calendar, browser automation, reports, social media workflows, monitoring and human support.
+PrivateAgent.ch is a premium managed OpenClaw service for entrepreneurs and Swiss SMBs. It offers private AI operators on isolated infrastructure with messaging, email, calendar, browser automation, reports, social media workflows, monitoring and human support.
 
 ## Reference analysis
 
@@ -17,7 +17,7 @@ Core offer observed:
 - Individual and company plans
 - Strong argument against DIY VPS complexity
 
-ClawPilot differentiation:
+PrivateAgent.ch differentiation:
 - More premium Swiss-B2B visual identity
 - Stronger workflow language: “operator”, “business ops”, “human approval”
 - Focus on WhatsApp/Telegram, Swiss SMB workflows, reports, media QC and custom automations
@@ -27,7 +27,7 @@ ClawPilot differentiation:
 
 DNS NS lookup on 2026-05-03:
 
-- `clawpilot.ch` — no NS found, likely available
+- `privateagent.ch` — no NS found, likely available
 - `clawops.ch` — no NS found, likely available
 - `privateagent.ch` — no NS found, likely available
 - `agentforge.ch` — no NS found, likely available

@@ -22,25 +22,25 @@ export function LandingPage() {
       <motion.div className="scroll-beam" style={{ scaleX: scrollYProgress }} />
       <section className="hero shell">
         <header className="nav glass">
-          <a className="brand" href="#top" aria-label="ClawPilot Home">
+          <a className="brand" href="#top" aria-label="PrivateAgent.ch Home">
             <span className="brand-mark">CP</span>
-            <span>ClawPilot</span>
+            <span>PrivateAgent.ch</span>
           </a>
           <nav>
             {nav.map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
             ))}
           </nav>
-          <a className="nav-cta" href="mailto:hello@clawpilot.ch">Pilot starten <ChevronRight size={16} /></a>
+          <a className="nav-cta" href="mailto:info@privateagent.ch">Pilot starten <ChevronRight size={16} /></a>
         </header>
 
         <div className="hero-grid" id="top">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="hero-copy">
             <Badge>Private OpenClaw Agents · Swiss Managed Ops</Badge>
             <h1>Dein KI-Operator für alles, was im Alltag Zeit frisst.</h1>
-            <p className="lead">ClawPilot baut und betreibt private OpenClaw-Agenten für Schweizer Unternehmer: Messaging, E-Mail, Kalender, Browser, Reports, Social Media und individuelle Business-Workflows.</p>
+            <p className="lead">PrivateAgent.ch baut und betreibt private OpenClaw-Agenten für Schweizer Unternehmer: Messaging, E-Mail, Kalender, Browser, Reports, Social Media und individuelle Business-Workflows.</p>
             <div className="hero-actions">
-              <a className="button primary" href="mailto:hello@clawpilot.ch?subject=ClawPilot%20Pilotprojekt">Pilotprojekt anfragen <ArrowRight size={18} /></a>
+              <a className="button primary" href="mailto:info@privateagent.ch?subject=PrivateAgent.ch%20Pilotprojekt">Pilotprojekt anfragen <ArrowRight size={18} /></a>
               <a className="button secondary" href="#services"><Play size={17} /> Services ansehen</a>
             </div>
             <div className="trust-row">
@@ -55,7 +55,7 @@ export function LandingPage() {
             <div className="orb orb-b" />
             <div className="terminal glass-dark">
               <div className="dots"><i /><i /><i /></div>
-              <div className="terminal-line dim">clawpilot / live ops</div>
+              <div className="terminal-line dim">privateagent / live ops</div>
               <div className="terminal-line"><span>09:00</span> Morning report sent to Telegram</div>
               <div className="terminal-line"><span>09:12</span> 14 emails triaged, 3 drafts ready</div>
               <div className="terminal-line"><span>09:18</span> Browser agent collected competitor prices</div>
@@ -131,7 +131,7 @@ export function LandingPage() {
         </div>
         <div className="compare-card winner">
           <Badge>Empfohlen</Badge>
-          <h3>ClawPilot Managed</h3>
+          <h3>PrivateAgent.ch Managed</h3>
           <ul><li>Private Instanz bereitgestellt</li><li>Tools verbunden</li><li>Workflows gebaut</li><li>Backups & Updates</li><li>Support durch Menschen</li></ul>
         </div>
       </section>
@@ -149,7 +149,7 @@ export function LandingPage() {
               <p className="price">{plan.price}</p>
               <p className="cadence">{plan.cadence}</p>
               <ul>{plan.points.map((p) => <li key={p}><Check size={16} /> {p}</li>)}</ul>
-              <a href="mailto:hello@clawpilot.ch" className="button full">Anfragen</a>
+              <a href="mailto:info@privateagent.ch" className="button full">Anfragen</a>
             </article>
           ))}
         </div>
@@ -161,17 +161,17 @@ export function LandingPage() {
 
       <section className="section shell final-cta" id="faq">
         <div className="cta-bg" />
-        <Badge>ClawPilot.ch wahrscheinlich frei</Badge>
+        <Badge>PrivateAgent.ch ist gekauft</Badge>
         <h2>Bereit für deinen privaten KI-Operator?</h2>
         <p>Wir bauen die erste produktive Automation, verbinden deine Kanäle und zeigen in einer Woche, was wirklich Zeit spart.</p>
-        <a className="button primary big" href="mailto:hello@clawpilot.ch?subject=ClawPilot%20Start">Pilot starten <ArrowRight /></a>
+        <a className="button primary big" href="mailto:info@privateagent.ch?subject=PrivateAgent.ch%20Start">Pilot starten <ArrowRight /></a>
       </section>
 
       <footer className="footer shell">
-        <div><strong>ClawPilot</strong><p>Private OpenClaw agents for Swiss business ops.</p></div>
+        <div><strong>PrivateAgent.ch</strong><p>Private OpenClaw agents for Swiss business ops.</p></div>
         <div><Server size={16} /> Private VPS</div>
         <div><LockKeyhole size={16} /> BYO API keys</div>
-        <div><Globe2 size={16} /> clawpilot.ch</div>
+        <div><Globe2 size={16} /> privateagent.ch</div>
       </footer>
     </main>
   );

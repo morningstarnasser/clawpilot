@@ -32,7 +32,7 @@ export const timeline = [
 ];
 
 export const advantages = [
-  { icon: Zap, title: 'Nicht nur Chat', text: 'ClawPilot führt Aufgaben aus — mit Browser, Dateien, Messaging, Kalender und Code-Agenten.' },
+  { icon: Zap, title: 'Nicht nur Chat', text: 'PrivateAgent.ch führt Aufgaben aus — mit Browser, Dateien, Messaging, Kalender und Code-Agenten.' },
   { icon: Sparkles, title: 'Massgeschneidert', text: 'Keine generische SaaS-Maske. Jeder Agent bekommt deine Prozesse, Sprache und Tools.' },
   { icon: ShieldCheck, title: 'Kontrolliert', text: 'Risk Levels, Freigaben, Logs und lokale Memory-Strategien statt blindem Autopilot.' },
 ];
