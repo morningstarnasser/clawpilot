@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
+import { useRef } from 'react';
 import { ArrowRight, Check, ChevronRight, Globe2, LockKeyhole, Play, Server, Sparkles } from 'lucide-react';
 import { advantages, faqs, nav, pricing, services, stack, timeline } from '@/lib/data';
 
@@ -14,8 +15,13 @@ function Badge({ children }: { children: React.ReactNode }) {
 }
 
 export function LandingPage() {
+  const timelineRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-  const beam = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const { scrollYProgress: timelineProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start 78%', 'end 42%'],
+  });
+  const beamScale = useTransform(timelineProgress, [0, 1], [0, 1]);
 
   return (
     <main>
@@ -103,13 +109,25 @@ export function LandingPage() {
             <h2>Von Chaos zu delegierbaren Workflows.</h2>
             <p>Wir starten klein, liefern schnell, und bauen danach jede Woche neue Fähigkeiten dazu. Kein Setup-Albtraum, keine Agenten-Spielerei.</p>
           </div>
-          <div className="timeline">
-            <motion.div className="timeline-beam" style={{ height: beam }} />
-            {timeline.map(([n, title, text]) => (
-              <div className="timeline-item" key={n}>
-                <span>{n}</span>
+          <div className="timeline" ref={timelineRef}>
+            <motion.div className="timeline-beam" style={{ scaleY: beamScale }} />
+            {timeline.map(([n, title, text], index) => (
+              <motion.div
+                className="timeline-item"
+                key={n}
+                initial={{ opacity: 0, x: 28, scale: 0.97 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.45 }}
+                transition={{ duration: 0.55, delay: index * 0.08, ease: 'easeOut' }}
+              >
+                <motion.span
+                  initial={{ scale: 0.72, rotate: -8 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  viewport={{ once: true, amount: 0.6 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 + 0.08, ease: 'easeOut' }}
+                >{n}</motion.span>
                 <div><h3>{title}</h3><p>{text}</p></div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
