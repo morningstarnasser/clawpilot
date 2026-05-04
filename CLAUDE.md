@@ -4,8 +4,8 @@
 PrivateAgent.ch is a static Next.js landing page for Ali's managed OpenClaw AI-Agent service.
 
 - Public brand/domain: `PrivateAgent.ch`
-- GitHub repo: `morningstarnasser/clawpilot` (historical repo name; content is PrivateAgent.ch)
-- VPS path: `/root/.openclaw/workspace/repos/clawpilot`
+- GitHub repo: `morningstarnasser/PrivateAgent.ch`
+- VPS path: `/root/.openclaw/workspace/repos/privateagent.ch`
 - Main stack: Next.js static export, React, Framer Motion, Lucide Icons
 - Build output: `out/`
 

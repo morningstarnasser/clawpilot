@@ -11,7 +11,7 @@ const jsonLd = {
       logo: 'https://privateagent.ch/icon-512.png',
       email: 'info@privateagent.ch',
       areaServed: { '@type': 'Country', name: 'Switzerland' },
-      sameAs: ['https://github.com/morningstarnasser/clawpilot'],
+      sameAs: ['https://github.com/morningstarnasser/PrivateAgent.ch'],
     },
     {
       '@type': 'WebSite',
