@@ -1,6 +1,6 @@
 # PrivateAgent.ch
 
-[![Deploy to Hostpoint](https://github.com/morningstarnasser/clawpilot/actions/workflows/deploy-hostpoint.yml/badge.svg)](https://github.com/morningstarnasser/clawpilot/actions/workflows/deploy-hostpoint.yml)
+[![Deploy to Hostpoint](https://github.com/morningstarnasser/PrivateAgent.ch/actions/workflows/deploy-hostpoint.yml/badge.svg)](https://github.com/morningstarnasser/PrivateAgent.ch/actions/workflows/deploy-hostpoint.yml)
 
 Private OpenClaw agents for Swiss business operations.
 
