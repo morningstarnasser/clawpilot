@@ -12,10 +12,10 @@ export const services = [
 ];
 
 export const stack = [
-  { icon: LockKeyhole, title: 'Private VPS', text: 'Jeder Kunde läuft auf isolierter Infrastruktur mit eigenen Secrets und Backups.' },
-  { icon: ShieldCheck, title: 'Managed Security', text: 'Firewall, Updates, Monitoring, Recovery und sichere Credential-Hygiene ab Tag 1.' },
-  { icon: Bot, title: 'OpenClaw Core', text: 'Agent Runtime, Skills, Browser, Messaging, Kalender, Memory und Subagent-Orchestrierung.' },
-  { icon: Wrench, title: 'Done-for-you Setup', text: 'Wir designen, deployen, testen und betreiben deine produktiven Agenten.' },
+  { icon: LockKeyhole, title: 'Private VPS auf Hetzner Cloud', text: 'Dedizierte Instanz pro Kunde im Hetzner-Rechenzentrum Nürnberg/Falkenstein (DE/EU). DSGVO-konform, ISO 27001 zertifiziert. Keine Multi-Tenant-Shared-Infrastruktur — eigene Secrets, eigene Backups, eigene IP.' },
+  { icon: ShieldCheck, title: 'Hardened Security', text: 'SSH-Key-Only Login, ufw Firewall, fail2ban gegen Brute-Force, Caddy mit Let’s Encrypt Auto-HTTPS, Security-Headers, automatische Updates und tägliche Hetzner-Snapshots als Disaster Recovery.' },
+  { icon: Bot, title: 'OpenClaw Core', text: 'Agent Runtime, Skills, Browser, Messaging, Kalender, Memory und Subagent-Orchestrierung — alles auf deiner privaten Instanz, nicht in einer Blackbox-Cloud.' },
+  { icon: Wrench, title: 'Done-for-you Setup', text: 'Wir designen, deployen, härten, monitoren und betreiben deine produktiven Agenten. Schweizer Beratung, deutsche Infrastruktur, transparente Logs.' },
 ];
 
 export const pricing = [
@@ -48,11 +48,19 @@ export const faqs = [
     answer: 'Für Schweizer Unternehmer, KMU, Agenturen und operative Teams, die wiederkehrende Aufgaben delegieren wollen: Inbox-Triage, Kundenanfragen, Terminchecks, Web-Portal-Arbeit, Daily Reports, Social Media und interne Workflows.',
   },
   {
-    question: 'Ist OpenClaw sicher genug für produktive Workflows?',
-    answer: 'Ja, wenn es sauber betrieben wird. Wir arbeiten mit separaten Secrets, Private VPS, Monitoring, Backups, Risk Levels und Human-in-the-loop-Freigaben. Kritische Aktionen werden nicht blind automatisiert.',
+    question: 'Wo läuft mein privater KI-Agent? Wer hat Zugriff auf meine Daten?',
+    answer: 'Jeder Agent läuft auf einer dedizierten Hetzner-Cloud-VPS im Rechenzentrum Nürnberg oder Falkenstein (Deutschland, EU). Hetzner Online GmbH ist ISO 27001 zertifiziert und DSGVO-konform. Keine Multi-Tenant-Shared-Infrastruktur — du hast deine eigene Maschine, eigene IP, eigene Secrets, eigene Backups. Zugriff hat ausschliesslich PrivateAgent.ch (für Wartung) und du (für Reviews/Approvals). Keine Drittanbieter-SaaS, keine Datenweitergabe.',
+  },
+  {
+    question: 'Welche konkreten Sicherheitsmassnahmen setzt ihr ein?',
+    answer: 'SSH-Key-Only Login (kein Passwort-Login), ufw Firewall, fail2ban gegen Brute-Force, Caddy mit Let’s Encrypt Auto-HTTPS und Security-Headers (HSTS, X-Frame-Options, CSP), automatische OS- und Paket-Updates, tägliche Hetzner-Snapshots für Disaster Recovery, separate Secrets pro Service, Risk-Levels für Aktionen und Human-in-the-loop-Freigaben für alles, was extern geht (E-Mails versenden, Buchungen, Zahlungen).',
+  },
+  {
+    question: 'Was passiert, wenn ich kündige? Kriege ich meine Daten?',
+    answer: 'Du kriegst auf Wunsch ein vollständiges Backup (Dateien, Logs, Konfiguration) als verschlüsseltes Archiv. Danach werden VPS und Backups nach Vereinbarung gelöscht. Keine Vendor-Lock-In-Tricks: deine Daten gehören dir, und OpenClaw selbst ist Open-Source-basiert.',
   },
   {
     question: 'Welche Tools kann ein PrivateAgent verbinden?',
-    answer: 'Typische Integrationen sind Telegram, WhatsApp, Gmail/Bluewin, Google Kalender, Browser-Automation, PDFs, Bilder, Obsidian/Vault-Dokumentation, GitHub, Social Media Workflows und kundenspezifische Web-Portale.',
+    answer: 'Typische Integrationen: Telegram, WhatsApp, Gmail/Bluewin, Google Kalender, Browser-Automation, PDFs, Bilder, Obsidian/Vault-Dokumentation, GitHub, Social Media Workflows und kundenspezifische Web-Portale. Auf Anfrage auch CRM-Systeme, Buchhaltungs-Tools (Bexio, etc.) und interne APIs.',
   },
 ];

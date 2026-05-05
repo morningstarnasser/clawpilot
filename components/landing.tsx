@@ -113,10 +113,10 @@ export function LandingPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
               >
-                <span><Check size={14} /> Private VPS</span>
-                <span><Check size={14} /> OpenClaw Skills</span>
+                <span><Check size={14} /> Hetzner Cloud DE/EU</span>
+                <span><Check size={14} /> ISO 27001 · DSGVO</span>
+                <span><Check size={14} /> Private VPS pro Kunde</span>
                 <span><Check size={14} /> Human approval</span>
-                <span><Check size={14} /> Swiss-hosted</span>
               </motion.div>
             </div>
 
