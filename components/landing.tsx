@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Check, ChevronRight, Globe2, LockKeyhole, Menu, Server } from "lucide-react";
 import { advantages, faqs, nav, pricing, services, stack, timeline } from "@/lib/data";
-import { useLenis } from "@/lib/use-lenis";
 import { Magnetic } from "@/components/magnetic";
 import { BentoCard } from "@/components/bento";
 import { Marquee } from "@/components/marquee";
@@ -17,8 +16,6 @@ function Badge({ children }: { children: React.ReactNode }) {
 const bentoSpan = ["big", "std", "std", "wide", "std", "std"] as const;
 
 export function LandingPage() {
-  useLenis();
-
   const timelineRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   const { scrollYProgress: timelineProgress } = useScroll({
