@@ -8,12 +8,11 @@ import { Magnetic } from "@/components/magnetic";
 import { BentoCard } from "@/components/bento";
 import { Marquee } from "@/components/marquee";
 import { SplitText } from "@/components/split-text";
+import { ContactStatus } from "@/components/contact-status";
 
 function Badge({ children }: { children: React.ReactNode }) {
   return <span className="badge">{children}</span>;
 }
-
-const bentoSpan = ["big", "std", "std", "wide", "std", "std"] as const;
 
 export function LandingPage() {
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -180,11 +179,10 @@ export function LandingPage() {
             </p>
           </div>
           <div className="bento">
-            {services.map((service, i) => {
+            {services.map((service) => {
               const Icon = service.icon;
-              const span = bentoSpan[i] ?? "std";
               return (
-                <BentoCard key={service.title} className={span}>
+                <BentoCard key={service.title}>
                   <div className="bento-icon">
                     <Icon size={22} />
                   </div>
@@ -233,12 +231,11 @@ export function LandingPage() {
             <Badge>Sicherheit & Stack</Badge>
             <h2>Auf privater Infrastruktur, nicht in der Blackbox.</h2>
           </div>
-          <div className="bento" style={{ gridAutoRows: "auto" }}>
-            {stack.map((item, i) => {
+          <div className="bento bento-4">
+            {stack.map((item) => {
               const Icon = item.icon;
-              const span = i === 0 ? "wide" : "std";
               return (
-                <BentoCard key={item.title} className={`${span} std`}>
+                <BentoCard key={item.title}>
                   <div className="bento-icon">
                     <Icon size={22} />
                   </div>
@@ -372,6 +369,7 @@ export function LandingPage() {
         <section className="section shell" id="kontakt">
           <div className="final-cta">
             <Badge>PrivateAgent.ch ist bereit</Badge>
+            <ContactStatus />
             <div className="contact-grid">
               <div className="contact-copy">
                 <h2>Bereit für deinen privaten KI-Operator?</h2>
