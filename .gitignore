@@ -9,4 +9,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # logo backups (kept locally only for rollback comparison)
-public/brand/*.old.*
+public/brand/*.old*
+public/*.old*
