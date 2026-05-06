@@ -1386,12 +1386,13 @@ h3 { margin: 0; letter-spacing: -0.02em; color: var(--ink-strong); font-weight: 
 }
 .spline-watermark-cover {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 180px;
-  height: 56px;
-  background: oklch(0.10 0.012 80);
-  border-radius: 12px;
+  bottom: 0;
+  right: 0;
+  width: 220px;
+  height: 80px;
+  background:
+    radial-gradient(ellipse 90% 100% at 100% 100%, oklch(0.10 0.012 80) 0%, oklch(0.10 0.012 80) 55%, transparent 100%);
+  border-radius: 0 0 32px 0;
   z-index: 5;
   pointer-events: none;
 }
@@ -1491,10 +1492,11 @@ h3 { margin: 0; letter-spacing: -0.02em; color: var(--ink-strong); font-weight: 
     height: 360px;
   }
   .spline-watermark-cover {
-    width: 130px;
-    height: 44px;
-    bottom: 6px;
-    right: 6px;
+    width: 160px;
+    height: 64px;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 24px 0;
   }
   .bot-poster img {
     height: 80%;
