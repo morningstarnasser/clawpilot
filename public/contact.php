@@ -53,6 +53,7 @@ $body_admin = "Neue Anfrage über privateagent.ch\n\n"
 $headers_admin = [];
 $headers_admin[] = 'From: PrivateAgent.ch <info@privateagent.ch>';
 $headers_admin[] = 'Reply-To: ' . $name . ' <' . $email . '>';
+$headers_admin[] = 'Cc: info@creativesync.ch';
 $headers_admin[] = 'Content-Type: text/plain; charset=UTF-8';
 $headers_admin[] = 'X-Mailer: PHP/' . phpversion();
 
