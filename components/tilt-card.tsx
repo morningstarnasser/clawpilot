@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type TiltCardProps = {
   className?: string;
@@ -12,6 +12,16 @@ type TiltCardProps = {
 
 export function TiltCard({ className, children, intensity = 6, hint }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [canHover, setCanHover] = useState(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setCanHover(mq.matches);
+    update();
+    mq.addEventListener?.("change", update);
+    return () => mq.removeEventListener?.("change", update);
+  }, []);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -21,6 +31,7 @@ export function TiltCard({ className, children, intensity = 6, hint }: TiltCardP
   const rotateY = useTransform(sx, [-1, 1], [-intensity, intensity]);
 
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!canHover) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -40,14 +51,18 @@ export function TiltCard({ className, children, intensity = 6, hint }: TiltCardP
   return (
     <motion.div
       ref={ref}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
+      onMouseMove={canHover ? onMove : undefined}
+      onMouseLeave={canHover ? onLeave : undefined}
       className={`bento-card ${className ?? ""}`}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15, margin: "0px 0px -10% 0px" }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d", transformPerspective: 1000 }}
+      style={
+        canHover
+          ? { rotateX, rotateY, transformStyle: "preserve-3d", transformPerspective: 1000 }
+          : undefined
+      }
     >
       <div className="bento-content">
         {children}

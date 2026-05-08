@@ -1501,6 +1501,84 @@ h3 { margin: 0; letter-spacing: -0.02em; color: var(--ink-strong); font-weight: 
   .bot-poster img {
     height: 80%;
   }
+
+  /* Tighter sections, lighter cards on small screens */
+  .section { padding: 64px 0; }
+  .section-grid { margin-bottom: 36px; gap: 14px; }
+  .section-num { font-size: 12px; padding-bottom: 6px; }
+  .section-head { gap: 14px; margin-bottom: 36px; }
+  .section-head h2 { max-width: 18ch; }
+  h2 { line-height: 1.0; }
+
+  .badge { font-size: 10px; padding: 6px 12px; letter-spacing: 0.12em; }
+
+  .bento, .bento.bento-4 { gap: 10px; }
+  .bento-card { padding: 22px 20px; border-radius: 14px; }
+  .bento-card h3 { font-size: 17px; }
+  .bento-card p { font-size: 13.5px; }
+  .bento-icon-wrap { width: 42px; height: 42px; margin-bottom: 16px; }
+  .bento-card .bento-hint { margin-top: 16px; font-size: 9.5px; }
+
+  .timeline-item { padding: 18px 18px 18px 16px; gap: 14px; grid-template-columns: 48px 1fr; }
+  .timeline-item .num { width: 48px; height: 48px; font-size: 17px; border-radius: 10px; }
+  .timeline-item h3 { font-size: 17px; }
+  .timeline-item p { font-size: 13.5px; }
+  .timeline::before, .timeline-beam { left: 23px; }
+
+  .compare-card { padding: 24px 20px; border-radius: 14px; }
+  .compare-card h3 { font-size: 18px; }
+  .compare-card ul li { padding: 9px 12px 9px 32px; font-size: 12.5px; }
+
+  .price-card { padding: 28px 22px; border-radius: 14px; }
+  .price-card.best { padding: 32px 22px; }
+  .price-card h3 { font-size: 20px; }
+  .price-card .price { font-size: 42px; }
+  .price-card.best .price { font-size: 46px; }
+  .ribbon { right: 22px; padding: 6px 10px; font-size: 9px; }
+  .price-card ul li { font-size: 13.5px; }
+
+  .advantages article { padding: 24px 20px; border-radius: 14px; }
+  .advantages h3 { font-size: 17px; }
+  .advantages p { font-size: 13.5px; }
+
+  .seo-grid article { padding: 22px 20px; border-radius: 12px; }
+  .seo-grid h3 { font-size: 15px; }
+  .seo-grid p { font-size: 13.5px; }
+
+  .faq-list details { padding: 18px 20px; border-radius: 12px; }
+  .faq-list summary { font-size: 15px; }
+  .faq-list p { font-size: 13.5px; }
+
+  .final-cta { padding: 56px 18px 48px; border-radius: 20px; }
+  .final-cta h2 { font-size: clamp(28px, 8vw, 38px); }
+  .contact-grid { gap: 32px; }
+  .contact-form { padding: 22px; border-radius: 14px; gap: 10px; }
+  .contact-form input, .contact-form select, .contact-form textarea {
+    padding: 11px 13px; font-size: 16px; /* 16px to prevent iOS zoom on focus */
+    border-radius: 8px;
+  }
+
+  .footer { padding: 48px 0 56px; margin-top: 48px; }
+  .footer-grid { gap: 28px; }
+
+  .ticker { padding: 12px 0; }
+  .ticker-pill { font-size: 10px; padding: 5px 12px; margin-right: 6px; }
+  .ticker-pill .label { font-size: 9px; letter-spacing: 0.10em; }
+
+  .terminal-body { padding: 12px; gap: 5px; }
+  .feed-line {
+    grid-template-columns: 44px 22px 1fr;
+    gap: 8px;
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  .feed-line .ts { font-size: 10.5px; }
+  .feed-line .tag { width: 22px; height: 16px; font-size: 9px; }
+  .terminal-header { padding: 12px 14px; }
+  .terminal-title { font-size: 10px; }
+  .terminal-meta { font-size: 9px; }
+  .terminal-footer { padding: 10px 14px; }
+  .terminal-status, .terminal-prompt { font-size: 10px; }
 }
 
 @media (max-width: 560px) {
@@ -1514,6 +1592,101 @@ h3 { margin: 0; letter-spacing: -0.02em; color: var(--ink-strong); font-weight: 
   .ticker-track { padding-left: 0; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .terminal-body { min-height: 280px; }
+}
+
+/* ============================================================
+   TOUCH DEVICES — kill sticky :hover after tap
+   Mobile browsers leave :hover stuck on the last-tapped element
+   until another tap clears it. We disable all hover effects on
+   non-hover-capable pointers and use :active for tap feedback.
+   ============================================================ */
+
+@media (hover: none), (pointer: coarse) {
+  .bento-card:hover {
+    border-color: var(--line);
+    box-shadow: 0 1px 0 oklch(1 0 0 / 0.8) inset;
+    transform: none;
+  }
+  .bento-card:hover::before { opacity: 0; }
+  .bento-card:hover::after { opacity: 0; }
+  .bento-card:hover .bento-icon-wrap {
+    background: var(--paper-2);
+    color: var(--ink-strong);
+    border-color: var(--line);
+  }
+  .bento-card:hover .bento-icon-wrap svg { transform: none; }
+  .bento-card:hover .bento-hint { color: var(--muted-faint); }
+
+  .timeline-item:hover {
+    border-color: var(--line);
+    background: var(--paper);
+    box-shadow: 0 1px 0 oklch(1 0 0 / 0.8) inset;
+  }
+  .timeline-item:hover .num {
+    background: var(--paper-2);
+    color: var(--ink-strong);
+    border-color: var(--line);
+  }
+
+  .price-card:hover {
+    transform: none;
+    border-color: var(--line);
+    box-shadow: 0 1px 0 oklch(1 0 0 / 0.8) inset;
+  }
+  .price-card.best:hover { transform: none; }
+
+  .advantages article:hover {
+    border-color: var(--line);
+    box-shadow: 0 1px 0 oklch(1 0 0 / 0.8) inset;
+  }
+  .advantages article:hover .advantage-icon {
+    background: var(--paper-2);
+    color: var(--ink-strong);
+    border-color: var(--line);
+  }
+
+  .desktop-nav a:hover { background: transparent; color: var(--muted); }
+  .mobile-menu-panel a:hover { background: transparent; color: var(--muted); }
+  .nav-cta:hover { box-shadow: 0 0 0 1px var(--ink-strong), 0 12px 28px oklch(0 0 0 / 0.20); }
+  .nav-cta:hover::after { transform: translateX(-100%); }
+  .button.primary:hover { box-shadow: 0 0 0 1px var(--ink-strong), 0 18px 40px oklch(0 0 0 / 0.25); }
+  .button.primary:hover::after { transform: translateX(-100%); }
+  .button.secondary:hover { background: var(--paper-2); border-color: var(--line-strong); color: var(--ink-strong); }
+
+  .price-card .button.primary:hover {
+    background: var(--paper-2); color: var(--ink-strong); border-color: var(--line-strong);
+  }
+  .price-card.best .button.primary:hover {
+    background: var(--ink-strong); color: var(--amber); border-color: var(--ink-strong);
+  }
+
+  .spline-hero-copy .button.primary:hover {
+    background: var(--amber); color: oklch(0.10 0.012 80);
+    box-shadow: 0 0 0 1px var(--amber-bright), 0 18px 40px var(--amber-glow);
+  }
+  .spline-hero-copy .button.secondary:hover {
+    background: oklch(1 0 0 / 0.06);
+    border-color: oklch(1 0 0 / 0.18);
+    color: oklch(0.95 0.005 80);
+  }
+
+  .faq-list details:hover { border-color: var(--line); }
+
+  /* Use :active for tap feedback instead — visible only while finger is down */
+  .bento-card:active {
+    transform: scale(0.985);
+    transition: transform 0.15s var(--e-out-quart);
+  }
+  .price-card:active {
+    transform: scale(0.99);
+    transition: transform 0.15s var(--e-out-quart);
+  }
+  .timeline-item:active {
+    background: var(--paper-3);
+    transition: background 0.15s var(--e-out-quart);
+  }
+  .button:active { transform: scale(0.97); transition: transform 0.12s var(--e-out-quart); }
+  .nav-cta:active { transform: scale(0.97); transition: transform 0.12s var(--e-out-quart); }
 }
 
 /* ============================================================
