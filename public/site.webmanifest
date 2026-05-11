@@ -1,13 +1,21 @@
 {
-  "name": "PrivateAgent.ch",
+  "name": "PrivateAgent.ch — Your Private AI Operator",
   "short_name": "PrivateAgent",
-  "description": "Private OpenClaw Agents for Swiss business operations.",
+  "description": "Managed private KI-Agenten für Schweizer KMU — WhatsApp, E-Mail, Kalender, Browser, Reports auf privater Hetzner-VPS.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#07101a",
-  "theme_color": "#5ee4ff",
+  "orientation": "portrait-primary",
+  "background_color": "#fbf7f0",
+  "theme_color": "#fbf7f0",
+  "lang": "de-CH",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/favicon-96x96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
